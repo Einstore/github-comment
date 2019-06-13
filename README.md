@@ -1,6 +1,10 @@
 # github-comment
 
-> Unfinished project
+- [x] Post comment
+- [ ] Get comment
+- [ ] Edit comment
+- [ ] Delete comment
+- [ ] List comments
 
 Leave a comment on any issue or PR on github.com or any enterprise github
 
