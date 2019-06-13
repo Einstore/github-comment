@@ -5,14 +5,9 @@
 //  Created by Ondrej Rafaj on 09/06/2019.
 //
 
-import Vapor
-import ConsoleKit
-import GithubConnector
 
+import GitHubKit
 
-let console = Terminal()
-
-var commandInput = CommandInput(arguments: CommandLine.arguments)
 
 struct Config {
     
@@ -45,7 +40,7 @@ func config() -> Config {
     var action: Config.Action?
     
     var previous: String?
-    for arg in commandInput.arguments {
+    for arg in CommandLine.arguments {
         switch true {
         case previous == "--user" || previous == "-u":
             username = arg
@@ -122,24 +117,17 @@ print("github-comment by Einstore, the open source enterprise appstore solution"
 print("https://github.com/Einstore/github-comment")
 
 let c = config()
-
-var services = Services()
-services.register(Client.self) { c in
-    return DefaultClient(on: c.eventLoop)
-}
-let eventLoop = EmbeddedEventLoop()
-let container = try! Container.boot(services: services, on: eventLoop).wait()
 let github = try! Github(
     Github.Config(
         username: c.username,
         token: c.token,
         server: c.server
-    ),
-    on: container
+    )
 )
 
 func print<C>(codable: C) where C: Codable {
-    fatalError()
+    let jsonData = try! JSONEncoder().encode(codable)
+    print(String(data: jsonData, encoding: .utf8)!)
 }
 
 switch c.action {

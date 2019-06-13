@@ -5,7 +5,7 @@
 //  Created by Ondrej Rafaj on 13/06/2019.
 //
 
-import Vapor
+import Foundation
 
 
 public struct Comment: Codable {
@@ -22,8 +22,8 @@ public struct Comment: Codable {
     public let htmlURL: String?
     public let body: String
     public let user: Owner
-    public let createdAt: Date
-    public let updatedAt: Date?
+    public let createdAt: String
+    public let updatedAt: String?
     
     enum CodingKeys: String, CodingKey {
         case id
