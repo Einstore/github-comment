@@ -138,16 +138,8 @@ let github = try! Github(
     on: container
 )
 
-enum Action: String {
-    case post
-    case edit
-    case delete
-    case get
-    case list
-}
-
 func print<C>(codable: C) where C: Codable {
-    
+    fatalError()
 }
 
 switch c.action {
