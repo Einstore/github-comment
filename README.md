@@ -19,5 +19,6 @@ Leave a comment on any issue or PR on github.com or any enterprise github
 
 #### Use:
 
-- Comment on an issue: github-comment [-s server] -t b27a8...500d -u rafiki270 -o einstore -r speedster -i 28 -c "Your comment"
-- Comment on a PR: github-comment [-s server] -t b27a8...500d -u rafiki270 -o einstore -r speedster -p 12 -c "Your comment"
+Comment on an issue: `github-comment [-s server] -t b27a8...500d -u rafiki270 -o einstore -r speedster -i 28 -c "Your comment"`
+
+Comment on a PR: `github-comment [-s server] -t b27a8...500d -u rafiki270 -o einstore -r speedster -p 12 -c "Your comment"`
