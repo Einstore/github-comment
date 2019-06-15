@@ -1,4 +1,4 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.1
 import PackageDescription
 
 let package = Package(
@@ -8,15 +8,13 @@ let package = Package(
     ],
     dependencies: [
         // .package(url: "https://github.com/Einstore/GitHubKit.git", from: "1.2.2")
-        .package(url: "https://github.com/vapor/swift-nio-http-client.git", from: "0.0.0"),
-        // .package(url: "https://github.com/vapor/vapor.git", from: "4.0.0-alpha.1.2")
+        .package(url: "https://github.com/vapor/swift-nio-http-client.git", from: "0.0.0")
     ],
     targets: [
         .target(
             name: "GithubComment",
             dependencies: [
-                "GitHubKit",
-                // "Vapor"
+                "GitHubKit"
             ]
         ),
         .target(
